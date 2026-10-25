@@ -1,0 +1,38 @@
+name: Suggest a public webcam
+description: Help open another window into the world.
+title: "[Camera] "
+labels: [camera]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Place and country
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Operator's public webcam page
+      description: An intentionally published public page. No device IPs, login URLs, credentials, or private-camera feeds.
+    validations:
+      required: true
+  - type: textarea
+    id: permission
+    attributes:
+      label: Source and rights
+      description: Who operates it? Link the embedding/reuse policy if available. Without permission, Glim only links to the original page.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What makes this window special?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Public source check
+      options:
+        - label: The operator deliberately publishes this webcam for public viewing.
+          required: true
+        - label: This does not expose a private home, private camera, or credentials.
+          required: true

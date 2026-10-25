@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+.env
+.env.*
+!.env.example
+.firecrawl/
+coverage/
+*.log
+*.sqlite*
+artifacts/
