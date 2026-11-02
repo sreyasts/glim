@@ -15,6 +15,34 @@ const link = (camera: Omit<Camera, 'permission' | 'permissionUrl' | 'verifiedOn'
 
 /** Curated sources only. Network accessibility never establishes redistribution rights. */
 export const cameras: Camera[] = [
+  {
+    id: 'tembe-elephants', name: 'Tembe Elephant Park waterhole', place: 'Tembe Elephant Park', country: 'South Africa', countryCode: 'ZA', flag: '🇿🇦',
+    lat: -27.035, lng: 32.423, coordinateAccuracy: 'approximate', timezone: 'Africa/Johannesburg', category: 'Nature', provider: 'Africam · YouTube',
+    sourceUrl: 'https://www.youtube.com/watch?v=gdrNUUf-cQw', permission: 'platform-embed',
+    permissionUrl: 'https://www.youtube.com/t/terms', media: { kind: 'youtube', url: 'https://www.youtube-nocookie.com/embed/gdrNUUf-cQw', live: true },
+    posterUrl: 'https://i.ytimg.com/vi/gdrNUUf-cQw/hqdefault.jpg', description: 'Africam’s intentionally public wildlife broadcast. The map point represents the park approximately; precise camera coordinates are not supplied. The operator may use alternate views or recorded highlights, which are identified in its broadcast.', verifiedOn: '2026-11-02', accent: '#245dd9',
+  },
+  {
+    id: 'london-abbey-road', name: 'Abbey Road crossing', place: 'London', country: 'United Kingdom', countryCode: 'GB', flag: '🇬🇧',
+    lat: 51.53202, lng: -0.1774, timezone: 'Europe/London', category: 'City', provider: 'EarthCam · YouTube',
+    sourceUrl: 'https://www.youtube.com/watch?v=zMCea32gpmg', permission: 'platform-embed',
+    permissionUrl: 'https://www.youtube.com/t/terms', media: { kind: 'youtube', url: 'https://www.youtube-nocookie.com/embed/zMCea32gpmg', live: true },
+    posterUrl: 'https://i.ytimg.com/vi/zMCea32gpmg/hqdefault.jpg', description: 'EarthCam’s intentionally public Abbey Road crossing broadcast. Played through the official YouTube embed; operator availability and broadcast delays apply.', verifiedOn: '2026-11-02', accent: '#245dd9',
+  },
+  {
+    id: 'kannur-live', name: 'Kannur public street view', place: 'Kannur, Kerala', country: 'India', countryCode: 'IN', flag: '🇮🇳',
+    lat: 11.90056, lng: 75.36028, timezone: 'Asia/Kolkata', category: 'City', provider: 'Live Cam Kerala India · YouTube',
+    sourceUrl: 'https://www.youtube.com/watch?v=d-NrCm9vMz8', permission: 'platform-embed',
+    permissionUrl: 'https://www.youtube.com/t/terms', media: { kind: 'youtube', url: 'https://www.youtube-nocookie.com/embed/d-NrCm9vMz8', live: true },
+    posterUrl: 'https://i.ytimg.com/vi/d-NrCm9vMz8/hqdefault.jpg', description: 'The camera owner’s intentionally public Kannur street broadcast, shown through YouTube’s official embedded player. The broadcaster controls availability.', verifiedOn: '2026-11-02', accent: '#245dd9',
+  },
+  {
+    id: 'venice-grand-canal', name: 'Grand Canal · Ca’ Angeli', place: 'Venice', country: 'Italy', flag: '🇮🇹',
+    lat: 45.4368, lng: 12.3295, timezone: 'Europe/Rome', category: 'City', provider: 'I Love You Venice · YouTube',
+    sourceUrl: 'https://www.youtube.com/watch?v=zKGzYuT5tg0', permission: 'platform-embed',
+    permissionUrl: 'https://www.youtube.com/t/terms', media: { kind: 'youtube', url: 'https://www.youtube-nocookie.com/embed/zKGzYuT5tg0', live: true },
+    posterUrl: 'https://i.ytimg.com/vi/zKGzYuT5tg0/hqdefault.jpg', description: 'The operator’s Grand Canal broadcast, played through the official YouTube embedded player. Availability is controlled by the broadcaster.', verifiedOn, accent: '#245dd9',
+  },
   air('grca', 'A canyon, a million colors.', 'Grand Canyon, Arizona', 36.058, -112.109, 'America/Phoenix', 'Watch the light move across one of the deepest stories on Earth. NPS air-quality camera, usually refreshed every 15 minutes.'),
   {
     id: 'kilauea', name: 'The Earth, still becoming.', place: 'Kīlauea, Hawaiʻi', country: 'United States', flag: '🇺🇸',

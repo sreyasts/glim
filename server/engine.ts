@@ -1,4 +1,4 @@
-import type { Rule, Weather } from '../shared/types';
+import type { Camera, Rule, Weather } from '../shared/types';
 import { cameraById } from '../shared/cameras';
 import { Store } from './db';
 import type { WeatherService } from './weather';
@@ -25,7 +25,7 @@ export function matchesRule(rule: Pick<Rule, 'kind' | 'threshold'>, weather: Wea
 export class AlertEngine {
   private running = false;
   private timer?: ReturnType<typeof setInterval>;
-  constructor(private store: Store, private weather: Pick<WeatherService, 'get'>, private deliver: (owner: string, event: import('../shared/types').AlertEvent) => Promise<void>, private log: (message: string) => void = console.warn) {}
+  constructor(private store: Store, private weather: Pick<WeatherService, 'get'>, private deliver: (owner: string, event: import('../shared/types').AlertEvent) => Promise<void>, private log: (message: string) => void = console.warn, private lookup: (id: string) => Camera | undefined | Promise<Camera | undefined> = id => cameraById.get(id)) {}
   async tick(): Promise<void> {
     if (this.running) return;
     this.running = true;
@@ -35,7 +35,7 @@ export class AlertEngine {
       for (const rule of this.store.activeRules()) groups.set(rule.cameraId, [...(groups.get(rule.cameraId) ?? []), rule]);
       // One weather request per watched place, shared across every viewer.
       for (const [id, rules] of groups) {
-        const camera = cameraById.get(id);
+        const camera = await this.lookup(id);
         if (!camera) continue;
         try {
           const weather = await this.weather.get(camera);

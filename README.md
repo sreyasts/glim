@@ -1,20 +1,20 @@
 <p align="center"><img src="public/favicon.svg" width="62" alt="Glim globe" /></p>
 <h1 align="center">glim.</h1>
-<p align="center"><strong>A little window into everywhere.</strong><br />Spin the globe. Find a place. Stay for a moment.</p>
+<p align="center"><strong>Public camera atlas.</strong><br />Choose a place. Zoom in. Watch the camera here.</p>
 <p align="center"><a href="https://github.com/sreyasts/glim/actions/workflows/ci.yml"><img src="https://github.com/sreyasts/glim/actions/workflows/ci.yml/badge.svg" alt="CI" /></a> <img src="https://img.shields.io/badge/Node-24%2B-294944" alt="Node 24 or newer" /> <img src="https://img.shields.io/badge/license-MIT-c2dab0" alt="MIT license" /></p>
 
-Glim is an open-source globe for **intentionally public webcams**, saved places, and useful weather alerts. Discover a national park, check a harbor, or catch the next sunrise without turning the world into another infinite feed.
+Glim is a map-first explorer for **intentionally public cameras**. It loads official camera networks, clusters their map points, zooms to individual cameras, and plays supported video or images inside the workspace. Saved cameras and location-weather alerts remain available.
 
-This is a runnable first release, not a directory of every internet-connected CCTV camera. Publicly reachable devices are not automatically public broadcasts or licensed for redistribution.
+This is a runnable camera explorer. Coverage comes from connected public operators; publicly reachable devices are not automatically public broadcasts or licensed for redistribution.
 
-![Glim public webcam explorer](docs/images/desktop.jpg)
+![Glim map and inline camera player](docs/images/atlas-desktop.jpg)
 
 ### What works
 
-- **Interactive 3D globe:** bundled Natural Earth geography, camera markers, click-to-focus, rotation control, and an accessible list fallback.
-- **Curated global directory:** search by place, country, or operator; filter nature, cities, coast, wildlife, and volcanoes.
-- **Source-aware viewing:** periodically refreshed public-domain NPS/USGS images; other operators open on their own websites. No fabricated “live” badges.
-- **Saved places and sharing:** persistent favorites, direct `/place/:id` links, native sharing / clipboard, local camera time.
+- **Globe-to-street navigation:** MapLibre globe, camera clusters, geographic zoom, place search, individual markers, and a keyboard-accessible camera index.
+- **Connected networks:** official Caltrans district catalogs and TfL JamCams, refreshed at runtime. Optional Windy Webcams API integration adds worldwide discovery by map viewport. Counts reflect loaded metadata, not a claim that every stream is working.
+- **Inline viewing:** HLS live video, official YouTube embeds, updated MP4 clips, Windy players, and updating images. Live sources, clips, timelapses, and stills are distinct. Connection status comes from the player.
+- **Saved cameras and sharing:** persistent favorites, direct `/place/:id` links, clipboard sharing, local camera time where the source supplies a timezone.
 - **Real condition alerts:** rain, snow, wind threshold, and the 15 minutes before predicted sunrise/sunset. Server-side worker, SQLite inbox, transition deduplication, and an hourly cooldown.
 - **Optional background Web Push:** opt-in Chrome/Firefox/Safari notifications with VAPID keys. Inbox alerts work without push credentials.
 - **Small, honest privacy model:** browser-specific sessions, HTTP-only cookies, ownership checks, and delete-my-data. No analytics or location permission.
@@ -32,7 +32,7 @@ npm ci
 npm run dev
 ```
 
-Open **http://localhost:5173**. Vite proxies `/api` to the server on port 3001. No API keys are required for local, non-commercial exploration. Keep the server running for alert evaluation.
+Open **http://localhost:5173**. Vite proxies `/api` to the server on port 3001. Caltrans, TfL, and reviewed sources work without API keys. For worldwide Windy discovery, add `WINDY_WEBCAMS_API_KEY` to `.env` and restart the server. It stays server-side; never use a `VITE_` variable for the key. Keep the server running for catalog refresh and alert evaluation.
 
 ```sh
 npm run check      # API / persistence / alert-engine tests, TypeScript, production build
@@ -44,17 +44,17 @@ For a single-server local preview of the production build, set `APP_ORIGIN=http:
 
 ### Set a real alert
 
-1. Choose a place and click **Keep an eye on this place**.
+1. Choose a camera and click **Watch location**.
 2. Select a supported condition. Wind thresholds use km/h.
-3. Open **Your alerts** to pause, delete, or inspect alerts.
-4. To receive background browser notifications, generate VAPID keys once with `npm run push:keys`, put them in `.env`, restart, and choose **Enable browser push**. Use HTTPS in production.
+3. Open **Watches** to pause, delete, or inspect alerts.
+4. To receive background browser notifications, generate VAPID keys once with `npm run push:keys`, put them in `.env`, restart, and choose **Enable notifications**. Use HTTPS in production.
 
 **These are location-weather alerts, not camera image analysis.** Weather data is modeled and may differ from the camera scene. Alerts evaluate every five minutes by default and appear when a condition first matches. Continued rain does not create repeated messages. Delivery is best-effort; missed events during downtime are not reconstructed. Glim is not an emergency alert service.
 
 ### Limits that matter
 
-- Seed coverage is small and curated. Most non-US views currently open at the source rather than playing inside Glim.
-- Inline views are snapshots. Neither a successful HTTP request nor an image load establishes when a frame was captured; check the operator's timestamp.
+- Worldwide discovery requires a valid Windy key and is subject to its plan. Startup loads country samples from 48 countries, up to 200 China entries, and up to 1,000 popular worldwide entries within the documented free-tier pagination limit, with two requests at a time. Map movement discovers up to 50 additional entries per area. This is partial coverage, and many entries are timelapses. Windy live entries embed the operator’s stream page; some operators may block embedding, be offline, or require interaction.
+- Caltrans advertises HLS streams, some of which can be offline. The player exposes connection failures and offers the source image. TfL serves periodically updated short clips, not continuous live video. Image retrieval time is not capture time.
 - Arbitrary requests such as “tell me if a crowd forms” are **not implemented**. See the [roadmap](docs/ROADMAP.md) for the evidence and rights needed to add visual alerts.
 - Sessions expire after 30 days and do not sync across devices. Losing the cookie loses access to that session's data; expired data is removed by the worker.
 - SQLite and the worker target **one persistent server instance**. Static hosting alone cannot run the alert service.
@@ -64,18 +64,21 @@ For a single-server local preview of the production build, set `APP_ORIGIN=http:
 ### Project map
 
 ```text
-src/                 React interface, globe, API client
+src/                 Map workspace, camera player, watches, API client
 shared/cameras.ts    Curated camera register and rights metadata
 shared/types.ts      Shared types and validated rule inputs
 server/app.ts        Fastify API, sessions, origin checks, static hosting
 server/db.ts         SQLite store and persistence
 server/engine.ts     Background rule evaluation and deduplication
 server/weather.ts    Cached, coalesced Open-Meteo requests
+server/catalog.ts    Caltrans, TfL, and Windy discovery and source validation
+server/stream.ts     Allowlisted Caltrans HLS relay; no arbitrary-URL proxy
+server/geocoder.ts   Local GeoNames city/country search; no external geocoder
 public/sw.js         Opt-in background Web Push
 tests/               Ownership, validation, persistence, and alert-engine tests
 ```
 
-[Deployment & operations](docs/DEPLOYMENT.md) · [Sources & rights](docs/SOURCES.md) · [Product & launch plan](docs/LAUNCH.md) · [Roadmap](docs/ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+[Deployment & operations](docs/DEPLOYMENT.md) · [Coverage & checks](docs/COVERAGE.md) · [Sources & rights](docs/SOURCES.md) · [Product & launch plan](docs/LAUNCH.md) · [Roadmap](docs/ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 ### Help open another window
 
@@ -83,4 +86,4 @@ tests/               Ownership, validation, persistence, and alert-engine tests
 
 ### License and credits
 
-Code: [MIT](LICENSE). The code license does not license camera content. NPS and USGS operators are credited in the app; read each source's restrictions. Weather: [Open-Meteo](https://open-meteo.com/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Geography: [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/), distributed through world-atlas. Fonts: DM Sans and Manrope (SIL Open Font License, bundled through Fontsource). Icons: Lucide (ISC).
+Code: [MIT](LICENSE). The code license does not license camera content. Operators are credited in the player. Weather: [Open-Meteo](https://open-meteo.com/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Cartography: [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) and [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/). MapLibre GL JS: BSD. DM Sans: SIL OFL. Lucide: ISC. Redesign guidance: [Impeccable](https://github.com/pbakaus/impeccable), installed as a local Codex skill; product and design decisions are recorded in `PRODUCT.md` and `DESIGN.md`.

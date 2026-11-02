@@ -40,6 +40,16 @@ Local, non-commercial use defaults to `api.open-meteo.com`. Revenue-generating u
 
 The seed directory is intentionally small. Extending it to thousands of watched places requires provider quota planning, batch requests, queueing, and cost accounting. Do not assume the free endpoint will support a commercial global network.
 
+## Camera providers and map services
+
+Caltrans's 12 district catalogs and TfL JamCams load asynchronously and refresh every 15 minutes. A failed catalog refresh preserves previously loaded entries. Provider status, loaded counts, and failures are visible under Camera networks.
+
+Set `WINDY_WEBCAMS_API_KEY` to enable worldwide viewport discovery. The key is sent only from the server to `api.windy.com`; no `VITE_` key is used. API image URLs are short-lived; selected details refresh after four minutes. Viewport requests are coalesced and cached for four minutes, with at most 5,000 recently discovered Windy cameras retained in memory. Plan limits and a 50-camera request limit mean this is discovery, not a complete global export. Revisit a region to reload its cameras after a restart.
+
+HLS source URLs come from Caltrans metadata. The stream relay accepts only known camera IDs and HTTPS `*.dot.ca.gov` hosts; it refuses redirects and unexpected content types. Plan bandwidth and rate limits before inviting significant live-video traffic. The server does not persist video.
+
+The street map uses the OpenStreetMap standard tile service, and cluster labels use MapLibre demo glyphs. These public services are suitable for review and small-scale compliant use, not an unbounded production traffic promise. Provision a tile/glyph provider and update the map style plus CSP for substantial deployment. Place search uses the bundled GeoNames city and country index locally; it makes no runtime request to Nominatim or another geocoding service. Update the gazetteer with `python scripts/update-places.py` and retain GeoNames attribution.
+
 ## State, reliability, and privacy
 
 - One process owns the alert loop. **Do not run multiple replicas against the same database**: they can duplicate evaluations. A distributed scheduler and database locks are future work.

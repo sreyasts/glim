@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T03:18:02.411Z",
+  "title": "Design System: Glim",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Atlas Blue",
+        "canonical": "#245dd9",
+        "tonalRamp": [
+          "oklch(15% 0.0906 262.85)",
+          "oklch(25% 0.1411 262.85)",
+          "oklch(35% 0.1778 262.85)",
+          "oklch(45% 0.1971 262.85)",
+          "oklch(58% 0.1933 262.85)",
+          "oklch(72% 0.1537 262.85)",
+          "oklch(85% 0.0906 262.85)",
+          "oklch(95% 0.0312 262.85)"
+        ]
+      },
+      "blue-hover": {
+        "role": "primary",
+        "displayName": "Pressed Blue",
+        "canonical": "#1e50bb",
+        "tonalRamp": [
+          "oklch(15% 0.0805 262.72)",
+          "oklch(25% 0.1254 262.72)",
+          "oklch(35% 0.1580 262.72)",
+          "oklch(45% 0.1751 262.72)",
+          "oklch(58% 0.1717 262.72)",
+          "oklch(72% 0.1366 262.72)",
+          "oklch(85% 0.0805 262.72)",
+          "oklch(95% 0.0277 262.72)"
+        ]
+      },
+      "selected": {
+        "role": "primary",
+        "displayName": "Selection Wash",
+        "canonical": "#edf3ff",
+        "tonalRamp": [
+          "oklch(15% 0.0079 264.49)",
+          "oklch(25% 0.0123 264.49)",
+          "oklch(35% 0.0154 264.49)",
+          "oklch(45% 0.0171 264.49)",
+          "oklch(58% 0.0168 264.49)",
+          "oklch(72% 0.0134 264.49)",
+          "oklch(85% 0.0079 264.49)",
+          "oklch(95% 0.0027 264.49)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1c2832",
+        "tonalRamp": [
+          "oklch(15% 0.0114 244.03)",
+          "oklch(25% 0.0177 244.03)",
+          "oklch(35% 0.0223 244.03)",
+          "oklch(45% 0.0247 244.03)",
+          "oklch(58% 0.0242 244.03)",
+          "oklch(72% 0.0193 244.03)",
+          "oklch(85% 0.0114 244.03)",
+          "oklch(95% 0.0039 244.03)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#53616e",
+        "tonalRamp": [
+          "oklch(15% 0.0123 246.40)",
+          "oklch(25% 0.0192 246.40)",
+          "oklch(35% 0.0242 246.40)",
+          "oklch(45% 0.0268 246.40)",
+          "oklch(58% 0.0263 246.40)",
+          "oklch(72% 0.0209 246.40)",
+          "oklch(85% 0.0123 246.40)",
+          "oklch(95% 0.0042 246.40)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "#dfe5e9",
+        "tonalRamp": [
+          "oklch(15% 0.0038 236.57)",
+          "oklch(25% 0.0060 236.57)",
+          "oklch(35% 0.0075 236.57)",
+          "oklch(45% 0.0084 236.57)",
+          "oklch(58% 0.0082 236.57)",
+          "oklch(72% 0.0065 236.57)",
+          "oklch(85% 0.0038 236.57)",
+          "oklch(95% 0.0013 236.57)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(25% 0.0000 89.88)",
+          "oklch(35% 0.0000 89.88)",
+          "oklch(45% 0.0000 89.88)",
+          "oklch(58% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(85% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#f4f6f8",
+        "tonalRamp": [
+          "oklch(15% 0.0016 247.86)",
+          "oklch(25% 0.0024 247.86)",
+          "oklch(35% 0.0031 247.86)",
+          "oklch(45% 0.0034 247.86)",
+          "oklch(58% 0.0033 247.86)",
+          "oklch(72% 0.0026 247.86)",
+          "oklch(85% 0.0016 247.86)",
+          "oklch(95% 0.0005 247.86)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "canonical": "#edf1f4",
+        "tonalRamp": [
+          "oklch(15% 0.0027 239.82)",
+          "oklch(25% 0.0042 239.82)",
+          "oklch(35% 0.0052 239.82)",
+          "oklch(45% 0.0058 239.82)",
+          "oklch(58% 0.0057 239.82)",
+          "oklch(72% 0.0045 239.82)",
+          "oklch(85% 0.0027 239.82)",
+          "oklch(95% 0.0009 239.82)"
+        ]
+      },
+      "map-ocean": {
+        "role": "neutral",
+        "displayName": "Ocean",
+        "canonical": "#dae8ef",
+        "tonalRamp": [
+          "oklch(15% 0.0081 229.01)",
+          "oklch(25% 0.0126 229.01)",
+          "oklch(35% 0.0158 229.01)",
+          "oklch(45% 0.0175 229.01)",
+          "oklch(58% 0.0172 229.01)",
+          "oklch(72% 0.0137 229.01)",
+          "oklch(85% 0.0081 229.01)",
+          "oklch(95% 0.0028 229.01)"
+        ]
+      },
+      "map-land": {
+        "role": "neutral",
+        "displayName": "Land",
+        "canonical": "#f0efe7",
+        "tonalRamp": [
+          "oklch(15% 0.0048 100.83)",
+          "oklch(25% 0.0075 100.83)",
+          "oklch(35% 0.0095 100.83)",
+          "oklch(45% 0.0105 100.83)",
+          "oklch(58% 0.0103 100.83)",
+          "oklch(72% 0.0082 100.83)",
+          "oklch(85% 0.0048 100.83)",
+          "oklch(95% 0.0017 100.83)"
+        ]
+      },
+      "map-still": {
+        "role": "neutral",
+        "displayName": "Still Point",
+        "canonical": "#526774",
+        "tonalRamp": [
+          "oklch(15% 0.0148 235.48)",
+          "oklch(25% 0.0231 235.48)",
+          "oklch(35% 0.0291 235.48)",
+          "oklch(45% 0.0323 235.48)",
+          "oklch(58% 0.0316 235.48)",
+          "oklch(72% 0.0252 235.48)",
+          "oklch(85% 0.0148 235.48)",
+          "oklch(95% 0.0051 235.48)"
+        ]
+      },
+      "player-shell": {
+        "role": "neutral",
+        "displayName": "Player Slate",
+        "canonical": "#12212c",
+        "tonalRamp": [
+          "oklch(15% 0.0134 241.34)",
+          "oklch(25% 0.0209 241.34)",
+          "oklch(35% 0.0263 241.34)",
+          "oklch(45% 0.0291 241.34)",
+          "oklch(58% 0.0286 241.34)",
+          "oklch(72% 0.0227 241.34)",
+          "oklch(85% 0.0134 241.34)",
+          "oklch(95% 0.0046 241.34)"
+        ]
+      },
+      "player-visual": {
+        "role": "neutral",
+        "displayName": "Media Black",
+        "canonical": "#0d171f",
+        "tonalRamp": [
+          "oklch(15% 0.0099 243.28)",
+          "oklch(25% 0.0154 243.28)",
+          "oklch(35% 0.0194 243.28)",
+          "oklch(45% 0.0216 243.28)",
+          "oklch(58% 0.0211 243.28)",
+          "oklch(72% 0.0168 243.28)",
+          "oklch(85% 0.0099 243.28)",
+          "oklch(95% 0.0034 243.28)"
+        ]
+      },
+      "player-text": {
+        "role": "neutral",
+        "displayName": "Player Text",
+        "canonical": "#d9e3ea",
+        "tonalRamp": [
+          "oklch(15% 0.0065 238.02)",
+          "oklch(25% 0.0102 238.02)",
+          "oklch(35% 0.0128 238.02)",
+          "oklch(45% 0.0142 238.02)",
+          "oklch(58% 0.0140 238.02)",
+          "oklch(72% 0.0111 238.02)",
+          "oklch(85% 0.0065 238.02)",
+          "oklch(95% 0.0023 238.02)"
+        ]
+      },
+      "signal-idle": {
+        "role": "neutral",
+        "displayName": "Idle Signal",
+        "canonical": "#9aacba",
+        "tonalRamp": [
+          "oklch(15% 0.0130 241.31)",
+          "oklch(25% 0.0202 241.31)",
+          "oklch(35% 0.0255 241.31)",
+          "oklch(45% 0.0282 241.31)",
+          "oklch(58% 0.0277 241.31)",
+          "oklch(72% 0.0220 241.31)",
+          "oklch(85% 0.0130 241.31)",
+          "oklch(95% 0.0045 241.31)"
+        ]
+      },
+      "signal-live": {
+        "role": "neutral",
+        "displayName": "Playing Signal",
+        "canonical": "#83ce9c",
+        "tonalRamp": [
+          "oklch(15% 0.0471 154.19)",
+          "oklch(25% 0.0733 154.19)",
+          "oklch(35% 0.0924 154.19)",
+          "oklch(45% 0.1024 154.19)",
+          "oklch(58% 0.1004 154.19)",
+          "oklch(72% 0.0799 154.19)",
+          "oklch(85% 0.0471 154.19)",
+          "oklch(95% 0.0162 154.19)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Blue",
+        "canonical": "#326be0",
+        "tonalRamp": [
+          "oklch(15% 0.0856 262.48)",
+          "oklch(25% 0.1334 262.48)",
+          "oklch(35% 0.1681 262.48)",
+          "oklch(45% 0.1863 262.48)",
+          "oklch(58% 0.1827 262.48)",
+          "oklch(72% 0.1454 262.48)",
+          "oklch(85% 0.0856 262.48)",
+          "oklch(95% 0.0295 262.48)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "Compact Glim wordmark."
+      },
+      "headline": {
+        "displayName": "Camera title",
+        "purpose": "Selected camera identity; responsive size documented in DESIGN.md."
+      },
+      "title": {
+        "displayName": "Index heading",
+        "purpose": "Camera-browser heading."
+      },
+      "body": {
+        "displayName": "Explanatory text",
+        "purpose": "Browser explanation; source and weather copy vary by context."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Desktop action buttons; mobile actions increase to 12px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "field-focus",
+        "value": "0 0 0 2px #245dd91a",
+        "purpose": "Search field focus-within."
+      },
+      {
+        "name": "filter-selected",
+        "value": "0 2px 4px #23385212",
+        "purpose": "Active format filter."
+      },
+      {
+        "name": "map-instructions",
+        "value": "0 3px 13px #38536a16",
+        "purpose": "Floating map instructions."
+      },
+      {
+        "name": "map-controls",
+        "value": "0 3px 13px #38536a20",
+        "purpose": "Map zoom control stack."
+      },
+      {
+        "name": "map-hover",
+        "value": "0 3px 13px #38536a1a",
+        "purpose": "Hovered camera name."
+      },
+      {
+        "name": "map-onboarding",
+        "value": "0 4px 18px #233e5419",
+        "purpose": "First-view map hint."
+      },
+      {
+        "name": "toast",
+        "value": "0 5px 20px #15314730",
+        "purpose": "Temporary status notification."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 150ms, color 150ms",
+        "purpose": "Default button transition."
+      },
+      {
+        "name": "camera-place-focus",
+        "value": "1000ms",
+        "purpose": "Map focus transition; 0ms when reduced motion is requested."
+      },
+      {
+        "name": "cluster-expansion",
+        "value": "700ms",
+        "purpose": "Cluster click zoom transition."
+      },
+      {
+        "name": "map-click-world",
+        "value": "800ms",
+        "purpose": "Background map click or whole-world reset."
+      },
+      {
+        "name": "map-zoom-rotation",
+        "value": "350ms",
+        "purpose": "Zoom and rotation reset buttons."
+      },
+      {
+        "name": "reduced-motion-css",
+        "value": ".01ms",
+        "purpose": "CSS animation and transition duration under prefers-reduced-motion; scroll-behavior auto."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-desktop-min",
+        "value": "1550px"
+      },
+      {
+        "name": "compressed-desktop-max",
+        "value": "1190px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "850px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Create-weather-alert action; blue emphasis.",
+      "html": "<button class=\"ds-primary\">Create weather alert</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;font-size:11px;font-weight:550;border:1px solid var(--blue,#245dd9);border-radius:6px;background:var(--blue,#245dd9);color:#fff;cursor:pointer;transition:background-color 150ms,color 150ms;font-family:'DM Sans Variable',sans-serif;}.ds-primary:hover{background:#1e50bb}.ds-primary:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}.ds-primary:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Secondary / saved action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Save action with the existing saved visual treatment.",
+      "html": "<button class=\"ds-secondary ds-saved\">Saved</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;font-size:11px;font-weight:550;border:1px solid #cbd4dd;border-radius:6px;background:#fff;color:#384f62;cursor:pointer;transition:background-color 150ms,color 150ms;font-family:'DM Sans Variable',sans-serif;}.ds-secondary:hover{background:#f1f5fb;border-color:#95adc6}.ds-secondary:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}.ds-secondary.ds-saved{color:#1e51bd;border-color:#9db6e7;background:#edf3ff}.ds-secondary:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Icon action",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Close-viewer icon with an accessible name.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Close camera viewer\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m18 6-12 12M6 6l12 12\"/></svg></button>",
+      "css": ".ds-icon{display:inline-flex;align-items:center;justify-content:center;padding:8px;border:0;border-radius:5px;background:none;color:#566675;cursor:pointer;transition:background-color 150ms,color 150ms}.ds-icon:hover{color:#2454b7;background:#eef3fb}.ds-icon:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}"
+    },
+    {
+      "name": "Place search",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Search field and compact submit control.",
+      "html": "<form class=\"ds-search\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input aria-label=\"Search a place or camera\" placeholder=\"City, country, or camera…\"><button type=\"submit\" aria-label=\"Search places\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></form>",
+      "css": ".ds-search{display:flex;align-items:center;gap:9px;padding:4px 5px 4px 11px;border:1px solid #c8d1d8;border-radius:7px;background:#fff;color:#61707c;font-family:'DM Sans Variable',sans-serif;}.ds-search input{width:100%;min-width:0;border:0;outline:0;color:var(--ink,#1c2832);font:inherit;font-size:12px;padding:8px 0;background:transparent}.ds-search input::placeholder{color:#63717d}.ds-search:focus-within{border-color:var(--blue,#245dd9);box-shadow:0 0 0 2px #245dd91a}.ds-search button{background:#edf2fa;border:0;border-radius:5px;width:31px;height:31px;display:grid;place-items:center;color:#2454b7;flex-shrink:0;cursor:pointer}.ds-search button:hover{background:#dce7fa}.ds-search button:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}.ds-search button:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Camera row",
+      "kind": "card",
+      "refersTo": "camera-row-selected",
+      "description": "Selected camera row with the actual missing-thumbnail fallback.",
+      "html": "<button class=\"ds-row\" aria-pressed=\"true\"><span class=\"ds-thumb\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m22 8-6 4 6 4V8Z\"/><rect x=\"2\" y=\"6\" width=\"14\" height=\"12\" rx=\"2\"/></svg></span><span class=\"ds-copy\"><strong>Kannur public street view</strong><span>Kannur, Kerala, India</span><small>Live stream</small></span></button>",
+      "css": ".ds-row{width:100%;display:flex;align-items:center;gap:11px;text-align:left;padding:11px 10px;border:0;border-radius:6px;margin-bottom:3px;background:none;color:var(--ink,#1c2832);cursor:pointer;transition:background-color 150ms,color 150ms;font-family:'DM Sans Variable',sans-serif;}.ds-row:hover{background:#f1f5fa}.ds-row[aria-pressed=true]{background:#edf3ff}.ds-row:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}.ds-thumb{display:flex;align-items:center;justify-content:center;width:74px;height:57px;flex-shrink:0;background:#e6ebf0;color:#607386;overflow:hidden;border-radius:5px}.ds-copy{min-width:0;flex:1}.ds-copy strong{display:block;font-size:11px;font-weight:600;line-height:1.45;max-height:32px;overflow:hidden}.ds-copy span{display:block;font-size:10px;color:#596976;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-copy small{display:block;font-size:9px;color:#2454b7;margin-top:5px}"
+    },
+    {
+      "name": "Mobile workspace navigation",
+      "kind": "nav",
+      "refersTo": "mobile-navigation",
+      "description": "Reachable Map, Cameras, and Viewer panes; Viewer is disabled until selection.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Mobile workspace\"><button aria-pressed=\"true\">Map</button><button aria-pressed=\"false\">Cameras</button><button aria-pressed=\"false\" disabled>Viewer</button></nav>",
+      "css": ".ds-nav{height:59px;background:#fff;border-top:1px solid var(--line,#dfe5e9);display:flex;align-items:stretch;font-family:'DM Sans Variable',sans-serif;}.ds-nav button{display:flex;align-items:center;justify-content:center;flex:1;gap:7px;font:inherit;font-size:11px;color:#596b78;border:0;background:none;cursor:pointer;transition:background-color 150ms,color 150ms}.ds-nav button[aria-pressed=true]{color:var(--blue,#245dd9);background:#f0f5ff}.ds-nav button:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}.ds-nav button:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Format filters",
+      "kind": "chip",
+      "description": "Source-format filters with active state and keyboard focus.",
+      "html": "<div class=\"ds-filters\" aria-label=\"Camera formats\"><button aria-pressed=\"false\">All</button><button aria-pressed=\"true\">Live sources</button><button aria-pressed=\"false\">Video</button><button aria-pressed=\"false\">Images</button></div>",
+      "css": ".ds-filters{display:flex;gap:3px;background:#f0f3f6;border-radius:6px;padding:3px;font-family:'DM Sans Variable',sans-serif;}.ds-filters button{flex:1;padding:8px 4px;font:inherit;font-size:10px;font-weight:550;color:#53616d;white-space:nowrap;border:0;background:none;border-radius:4px;cursor:pointer;transition:background-color 150ms,color 150ms}.ds-filters button[aria-pressed=true]{color:#1f50bb;background:#fff;box-shadow:0 2px 4px #23385212}.ds-filters button:hover{color:var(--blue,#245dd9)}.ds-filters button:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}"
+    },
+    {
+      "name": "Player status",
+      "kind": "custom",
+      "refersTo": "player-status",
+      "description": "Example of an operator frame opening; this label does not confirm live footage.",
+      "html": "<div class=\"ds-status\"><span><i class=\"ds-signal\" aria-hidden=\"true\"></i>Operator player opened</span><button aria-label=\"Refresh camera\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 3-6.7M3 3v6h6\"/></svg></button></div>",
+      "css": ".ds-status{display:flex;align-items:center;justify-content:space-between;padding:6px 11px 6px 15px;min-height:37px;gap:8px;background:var(--player-shell,#12212c);color:var(--player-text,#d9e3ea);font-family:'DM Sans Variable',sans-serif;}.ds-status span{display:flex;align-items:center;gap:7px;font-size:10px}.ds-signal{width:5px;height:5px;background:#9aacba;border-radius:50%}.ds-status button{width:27px;height:26px;display:grid;place-items:center;color:#d9e3ea;border:0;background:none;border-radius:3px;cursor:pointer;transition:background-color 150ms,color 150ms}.ds-status button:hover{background:#344553}.ds-status button:focus-visible{outline:3px solid var(--focus,#326be0);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Contemporary Street Atlas",
+    "overview": "Glim is an operating workspace for finding public cameras geographically and watching their available visuals. Paper panels, slate cartography, compact geographic indexes, and restrained blue selection keep the map and camera legible together.\n\nThe visual signature is continuity: a selected camera row corresponds to a precise map point and its inline viewer. Camera names, operator credits, feed formats, and playback states carry the meaning.",
+    "keyCharacteristics": [
+      "Compact paper-and-slate workspace.",
+      "Geographic selection expressed consistently in blue.",
+      "One self-hosted sans family.",
+      "Explicit source, format, and playback labels."
+    ],
+    "rules": [
+      {
+        "name": "The State Truth Rule",
+        "body": "A blue stream-source marker describes the catalog format; only the player's actual playback state can say “Playing live.” Color never replaces its label.",
+        "section": "colors"
+      },
+      {
+        "name": "The Attached Selection Rule",
+        "body": "Keep index selection, geographic position, and camera viewer linked to the same stable camera ID.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the selected camera's identity across row, map point, title, and feed.",
+      "Do keep source format, playback state, and capture freshness distinct.",
+      "Do retain readable labels, keyboard focus, and reachable pane navigation.",
+      "Do show operator credit and recovery actions beside the relevant feed."
+    ],
+    "donts": [
+      "Don't infer working playback from a catalog entry, marker color, or loaded operator frame.",
+      "Don't crop camera media to fill decorative cards.",
+      "Don't invent camera visuals or substitute unrelated imagery after a source failure.",
+      "Don't add a marketing hero or decorative motion to the atlas workspace."
+    ]
+  }
+}

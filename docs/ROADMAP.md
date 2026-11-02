@@ -1,14 +1,14 @@
 # Scope and roadmap
 
-## Implemented in 0.1
+## Implemented in 0.2
 
-Globe and accessible directory; original source links; authorized public-domain snapshots; saved places; direct share links; local times; location weather; durable condition rules; private per-session inbox; optional Web Push; deletion; CI; deployable single-instance server.
+Globe-to-street map with clusters and individual markers; runtime Caltrans/TfL catalogs; optional worldwide Windy discovery; inline HLS, official YouTube players, short MP4 clips, Windy players, and snapshots; explicit format/availability states; source credit; saved cameras; share links; location weather; durable condition rules; private inbox; optional Web Push; deletion; CI; deployable single-instance server.
 
 ## Next: earn the “global” promise
 
 - Secure written embed agreements and supported APIs from tourism operators, wildlife broadcasters, and transportation authorities.
 - Keep a source register including operator, terms, attribution, image timestamp availability, update frequency, health history, and removal contact.
-- Add HLS/YouTube players only when the operator supports embedding. Handle offline and recorded-highlight states explicitly.
+- Expand supported provider coverage and keep the existing HLS/YouTube/MP4 players resilient to operator changes. Never reclassify clips or highlights as live streams.
 - Add provider-reported capture timestamps and content-change checks. Never label image retrieval time as capture time.
 - Add first-party account recovery, explicit retention controls, and cross-device favorites if users request them.
 - Measure activation and return behavior with an opt-in, first-party measurement design before investing in paid acquisition.

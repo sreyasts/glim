@@ -94,6 +94,6 @@ test('catalog contains unique coordinates, source links, and explicit redistribu
     assert.ok(camera.lat >= -90 && camera.lat <= 90); assert.ok(camera.lng >= -180 && camera.lng <= 180);
     assert.ok(new Intl.DateTimeFormat('en', { timeZone: camera.timezone }));
     if (camera.imageUrl) { assert.equal(camera.permission, 'public-domain'); assert.ok(camera.permissionUrl); }
-    else assert.equal(camera.permission, 'source-link');
+    else assert.ok(camera.permission === 'source-link' || (camera.permission === 'platform-embed' && camera.media?.kind === 'youtube'));
   }
 });

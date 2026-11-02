@@ -1,12 +1,14 @@
 import { z } from 'zod';
 
-export const categorySchema = z.enum(['Nature', 'City', 'Coast', 'Wildlife', 'Volcano']);
+export const categorySchema = z.enum(['Nature', 'City', 'Coast', 'Wildlife', 'Volcano', 'Traffic']);
 export type Category = z.infer<typeof categorySchema>;
 export interface Camera {
   id: string;
   name: string;
   place: string;
   country: string;
+  countryCode?: string;
+  coordinateAccuracy?: 'approximate';
   flag: string;
   lat: number;
   lng: number;
@@ -15,13 +17,29 @@ export interface Camera {
   provider: string;
   sourceUrl: string;
   imageUrl?: string;
-  permission: 'public-domain' | 'source-link';
+  permission: 'public-domain' | 'source-link' | 'provider-api' | 'platform-embed';
   permissionUrl: string;
   refreshSeconds?: number;
   description: string;
   verifiedOn: string;
   accent: string;
+  media?: { kind: 'hls' | 'mp4' | 'youtube' | 'embed'; url: string; live: boolean };
+  posterUrl?: string;
+  catalogUpdatedAt?: string;
+  region?: string;
 }
+
+export type Bounds = [west: number, south: number, east: number, north: number];
+export type FeedFormat = 'all' | 'live' | 'video' | 'snapshot';
+export interface ProviderStatus {
+  id: string; name: string; status: 'loading' | 'ready' | 'degraded' | 'unconfigured';
+  count: number; updatedAt: string | null; message: string;
+}
+export interface CatalogResult {
+  cameras: Camera[]; total: number; indexed: number; truncated: boolean;
+  providers: ProviderStatus[];
+}
+export interface PlaceResult { id: string; name: string; lat: number; lng: number; bounds?: Bounds }
 
 export const ruleInputSchema = z.object({
   cameraId: z.string().min(1).max(100),
