@@ -239,7 +239,12 @@ export class Catalog {
         await Promise.all(countries.slice(index, index + 2).map(country => this.discover(undefined, 0, country)));
         if (this.statuses.find(provider => provider.id === 'windy')?.status === 'degraded') return;
       }
-      for (const offset of [50, 100, 150]) { if (this.stopped) return; await this.discover(undefined, offset, 'CN'); }
+      for (const country of ['CN', 'GB', 'JP', 'ZA']) {
+        for (const offset of [50, 100, 150]) {
+          if (this.stopped) return;
+          await this.discover(undefined, offset, country);
+        }
+      }
       for (let offset = 0; offset < 1000; offset += 100) {
         if (this.stopped) break;
         await Promise.all([this.discover(undefined, offset), this.discover(undefined, offset + 50)]);

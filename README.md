@@ -53,7 +53,7 @@ For a single-server local preview of the production build, set `APP_ORIGIN=http:
 
 ### Limits that matter
 
-- Worldwide discovery requires a valid Windy key and is subject to its plan. Startup loads country samples from 48 countries, up to 200 China entries, and up to 1,000 popular worldwide entries within the documented free-tier pagination limit, with two requests at a time. Map movement discovers up to 50 additional entries per area. This is partial coverage, and many entries are timelapses. Windy live entries embed the operator’s stream page; some operators may block embedding, be offline, or require interaction.
+- Worldwide discovery requires a valid Windy key and is subject to its plan. Startup loads country samples from 48 countries, up to 200 entries each for China, the UK, Japan, and South Africa, and up to 1,000 popular worldwide entries within the documented free-tier pagination limit, with two requests at a time. Map movement discovers up to 50 additional entries per area. This is partial coverage, and many entries are timelapses. Windy live entries embed the operator’s stream page; some operators may block embedding, be offline, or require interaction.
 - Caltrans advertises HLS streams, some of which can be offline. The player exposes connection failures and offers the source image. TfL serves periodically updated short clips, not continuous live video. Image retrieval time is not capture time.
 - Arbitrary requests such as “tell me if a crowd forms” are **not implemented**. See the [roadmap](docs/ROADMAP.md) for the evidence and rights needed to add visual alerts.
 - Sessions expire after 30 days and do not sync across devices. Losing the cookie loses access to that session's data; expired data is removed by the worker.

@@ -2,7 +2,7 @@
 
 Glim can combine authorized public broadcasts worldwide. It cannot expose every CCTV camera: most security cameras are private, and public operators differ in licensing, uptime, player restrictions, and API access. An indexed entry is source metadata, not proof of current video playback. Different providers can list the same physical camera.
 
-The integration loads the twelve official Caltrans district catalogs, TfL JamCams, reviewed operator broadcasts, and Windy Webcams. Windy startup discovery samples 48 countries, up to 200 China entries, and up to 1,000 popular worldwide entries. Two requests run at a time. Moving and zooming discovers more. Its cache holds 5,000 entries; this is partial worldwide coverage.
+The integration loads the twelve official Caltrans district catalogs, TfL JamCams, reviewed operator broadcasts, and Windy Webcams. Windy startup discovery samples 48 countries, up to 200 entries each for China, the UK, Japan, and South Africa, and up to 1,000 popular worldwide entries. Two requests run at a time. Moving and zooming discovers more. Its cache holds 5,000 entries; this is partial worldwide coverage.
 
 ## Regional checks
 
@@ -18,5 +18,7 @@ Checked on 1–2 November 2026. Provider counts can include inactive entries and
 | London | Hundreds of TfL traffic entries and EarthCam's current Abbey Road broadcast. | TfL videos are updated clips. Abbey Road visibly played as a live YouTube broadcast. |
 
 Operator partnerships and additional licensed regional APIs matter more than adding markers. Production worldwide coverage needs a suitable provider plan, a refresh budget, regional source owners, playback checks, and provisioned map and stream infrastructure. No acquisition or retention outcome has been established.
+
+An additional country-pagination check on 2 November found 19 UK, two Japan, and four South Africa entries advertised as live beyond their first 50 results. Startup discovery now includes those deeper pages. These are additional provider-listed candidates, not 25 newly browser-verified streams, and some may overlap the global popularity sample. The first release did not exhaust available sources.
 
 Sources: [Windy API](https://api.windy.com/webcams/docs), [Caltrans CWWP](https://dot.ca.gov/programs/traffic-operations/traveler-information/cwwp), [TfL open data](https://tfl.gov.uk/info-for/open-data-users/), and the credited source links on individual entries.
